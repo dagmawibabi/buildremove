@@ -12,4 +12,11 @@ jobs:
   publish:
     permissions:
       id-token: write # pub.dev checks this OIDC token; no secrets needed.
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+      - run: dart pub get
+      - run: dart analyze
+      - run: dart test
+      - run: dart pub publish --force

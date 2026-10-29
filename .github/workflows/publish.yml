@@ -1,0 +1,15 @@
+# Publishes to pub.dev when a tag like v0.1.1 is pushed.
+# One-time setup: publish 0.1.0 by hand, then on pub.dev open
+# Admin → Automated publishing, enable GitHub Actions, set the repository
+# and the tag pattern v{{version}}.
+name: Publish to pub.dev
+
+on:
+  push:
+    tags: ['v[0-9]+.[0-9]+.[0-9]+*']
+
+jobs:
+  publish:
+    permissions:
+      id-token: write # pub.dev checks this OIDC token; no secrets needed.
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1

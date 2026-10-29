@@ -1,0 +1,31 @@
+name: buildremove
+description: >-
+  Interactive CLI that finds Flutter and Dart build artifacts on your drives,
+  cleans them, and shows which Flutter SDKs, FVM versions, Android NDKs, Gradle
+  versions and caches your projects no longer use.
+version: 0.1.0
+homepage: https://github.com/dagmawibabi/buildremove
+repository: https://github.com/dagmawibabi/buildremove
+issue_tracker: https://github.com/dagmawibabi/buildremove/issues
+documentation: https://github.com/dagmawibabi/buildremove#readme
+topics:
+  - flutter
+  - cli
+  - cleanup
+  - fvm
+  - gradle
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  args: ^2.5.0
+  ffi: ^2.1.0
+  path: ^1.9.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.0
+
+executables:
+  buildremove: buildremove
